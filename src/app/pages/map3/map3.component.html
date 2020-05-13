@@ -1,0 +1,30 @@
+<div class='map3-container col-md-12'>
+  <div class='form-container col-md-12'>
+    <form #formCurrentWeather='ngForm' (ngSubmit)='searchCurrentWeather()' class='col-md-12'>
+      <label>Search city Weather</label>
+      <div class='form-inputs-container col-md-12'>
+        <input type="text" placeholder="Search query comma separated" #city='ngModel' name='city' [(ngModel)]='query'
+          class='form-control' required class='form-control col-md-8' />
+        <input type="submit" value='Search' class='btn btn-primary col-md-3'
+          [disabled]='!formCurrentWeather.form.valid' />
+      </div>
+    </form>
+
+    <div *ngIf='currentWeather' class='d-flex align-content-around flex-wrap info-current-weather col-md-12'>
+      <h1 class='title-city col-md-12'>{{currentWeather.name}}</h1>
+      <div class='container-flex col-md-8'>
+        <img src='{{iconUrl}}' class='align-self-center col-md-3' />
+        <h3 class='align-self-center col-md-9'>{{weatherDescription}}</h3>
+      </div>
+
+      <div class='container-flex col-md-4'>
+        <img class='align-self-center col-md-3' src='../../../assets/images/temperature.png' />
+        <h3 class='align-self-center col-md-9'>Temperature: {{currentTemperature}}</h3>
+      </div>
+    </div>
+
+    <div class='map-container'>
+      <div id='map3'></div>
+    </div>
+  </div>
+</div>

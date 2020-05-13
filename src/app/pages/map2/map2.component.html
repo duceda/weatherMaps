@@ -1,0 +1,16 @@
+<mat-form-field *ngIf='weatherData' class='col-md-12'>
+  <mat-label>Select your country</mat-label>
+  <mat-select [(ngModel)]="selectedCountry" (ngModelChange)="getWeatherByCountry()">
+    <mat-option *ngFor="let country of countries | async" [value]="country">
+      {{country.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div class='col-md-12' *ngIf='!weatherData'>
+  <h3>Loading countries ...</h3>
+</div>
+
+<div class='map-container col-md-12'>
+  <div id='map2'></div>
+</div>

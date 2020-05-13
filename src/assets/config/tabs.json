@@ -1,0 +1,22 @@
+[
+    {
+        "path": "./map1",
+        "label": "Europe Population"
+    },
+    {
+        "path": "./map2",
+        "label": "Weather By Country"
+    },
+    {
+        "path": "./map3",
+        "label": "Current Weather"
+    },
+    {
+        "path": "./forecast",
+        "label": "Forecast Weather"
+    },
+    {
+        "path": "./chart",
+        "label": "Chart Weather"
+    }
+]

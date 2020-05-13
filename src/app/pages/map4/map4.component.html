@@ -1,0 +1,15 @@
+<div class='map4-container col-md-12'>
+  <div class='form-container col-md-12'>
+    <form #formCurrentWeather='ngForm' (ngSubmit)='searchForecast()' class='col-md-12'>
+      <label>Search 5 days Forecast</label>
+      <div class='form-inputs-container col-md-12'>
+        <input type="text" placeholder="Query comma separated" #city='ngModel' name='city' [(ngModel)]='query'
+          class='form-control' required class='form-control col-md-8' />
+        <input type="submit" value='Search' class='btn btn-primary col-md-3'
+          [disabled]='!formCurrentWeather.form.valid' />
+      </div>
+    </form>
+  </div>
+
+</div>
+<app-forecast-viewer *ngIf='weatherForecast' [forecast]='weatherForecast'></app-forecast-viewer>

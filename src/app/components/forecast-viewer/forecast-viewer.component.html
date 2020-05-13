@@ -1,0 +1,21 @@
+<h1 class='title-city col-md-12'>{{city.name}}</h1>
+
+<div class='container-grey' *ngFor='let forecastDay of forecastsByDay'>
+  <h3 class='title-city col-md-12'><u>Date: {{forecastDay.date}}</u></h3>
+  <div class='d-flex align-content-around flex-wrap info-current-weather col-md-12' *ngFor='let forecast of forecastDay.forecasts'>
+    <div class='container-flex col-md-2'>
+        <h3 class='align-self-center col-md-9'>{{forecast.dt_txt | date:'shortTime'}}</h3>
+      </div>
+
+    <div class='container-flex col-md-7'>
+      <img src='{{iconBaseUrl+forecast.weather[0].icon+iconPrefixUrl}}' class='align-self-center col-md-3' />
+      <h3 class='align-self-center col-md-9'>{{forecast.weather[0].main}} - {{forecast.weather[0].description}}</h3>
+    </div>
+
+    <div class='container-flex col-md-3'>
+      <img class='align-self-center col-md-3' src='../../../assets/images/temperature.png' />
+      <h3 class='align-self-center col-md-9'>Temperature: {{forecast.main.temp}}</h3>
+    </div>
+  </div>
+  <hr>
+</div>
